@@ -6,11 +6,11 @@ ___
 ####Проект содержит решения блока по теме Многопоточность курса Job4j
 
 ###Темы блока:
-* Threads :black_square_button:
-* Общие ресурсы :black_square_button:
-* Синхронизация ресурсов :black_square_button:
-* Wait, Notify, NotifyAll :black_square_button:
-* Non Blocking Algorithm :black_square_button:
+* Threads
+* Общие ресурсы
+* Синхронизация ресурсов
+* Wait, Notify, NotifyAll
+* Non Blocking Algorithm
 * Пулы
 * Экзамен по теме Многопоточность
 
@@ -18,6 +18,3 @@ ___
 ___
 * Telegram: [@draw_my_soul](https://t.me/draw_my_soul) 
 * Gmail: michael.lobov13@gmail.com
-  
-:grinning: 
-:black_square_button: ввв
