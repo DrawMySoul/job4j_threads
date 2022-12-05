@@ -12,14 +12,10 @@ public class ThreadState {
         System.out.println(first.getState());
         first.start();
         second.start();
-        try {
-            first.join();
-            second.join();
-        } catch (InterruptedException e) {
-            e.printStackTrace();
+        while (first.getState() != Thread.State.TERMINATED && second.getState() != Thread.State.TERMINATED) {
+            System.out.println(first.getState());
+            System.out.println(second.getState());
         }
-        if (first.getState() == Thread.State.TERMINATED && second.getState() == Thread.State.TERMINATED) {
-            System.out.println("Work completed");
-        }
+        System.out.println("Work completed");
     }
 }
