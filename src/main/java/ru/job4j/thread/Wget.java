@@ -21,14 +21,19 @@ public class Wget implements Runnable {
              FileOutputStream fileOutputStream = new FileOutputStream(fileName)) {
             byte[] dataBuffer = new byte[1024];
             int bytesRead;
+            int downloadData = 0;
             long start = System.currentTimeMillis();
             while ((bytesRead = in.read(dataBuffer, 0, 1024)) != -1) {
                 fileOutputStream.write(dataBuffer, 0, bytesRead);
-                long delta = System.currentTimeMillis() - start;
-                if (bytesRead >= speed) {
-                    Thread.sleep(1000 * (bytesRead / speed - delta));
+                downloadData += bytesRead;
+                if (downloadData >= speed) {
+                    long delta = System.currentTimeMillis() - start;
+                    if (delta < 1000) {
+                        Thread.sleep(1000 - delta);
+                    }
+                    start = System.currentTimeMillis();
+                    downloadData = 0;
                 }
-                start = System.currentTimeMillis();
             }
         } catch (IOException e) {
             e.printStackTrace();
@@ -49,15 +54,18 @@ public class Wget implements Runnable {
         }
     }
 
-    public static void main(String[] args) throws InterruptedException {
+    private static void argsValidate(String[] args) {
         if (args.length == 0) {
             throw new IllegalArgumentException("Args are empty! Parameters: first is url, second is speed limit");
         } else if (args.length == 1) {
             throw new IllegalArgumentException("Args contains only one parameter! Parameters: first is url, second is speed limit ");
-        } else {
-            urlValidate(args[0]);
-            speedValidate(args[1]);
         }
+        urlValidate(args[0]);
+        speedValidate(args[1]);
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        argsValidate(args);
         String url = args[0];
         int speed = Integer.parseInt(args[1]);
         Thread wget = new Thread(new Wget(url, speed));
