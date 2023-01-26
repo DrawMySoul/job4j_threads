@@ -1,4 +1,4 @@
-package ru.job4j.waitNotifyNotifyAll;
+package ru.job4j.wait_notify_notifyall;
 
 public class CountBarrier {
     private final Object monitor = this;

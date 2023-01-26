@@ -1,4 +1,4 @@
-package ru.job4j.waitNotifyNotifyAll;
+package ru.job4j.wait_notify_notifyall;
 
 import org.junit.jupiter.api.Test;
 
@@ -16,7 +16,11 @@ class SimpleBlockingQueueTest {
         Thread producer = new Thread(
             () -> {
                 for (int i = 0; i < 10; i++) {
-                    sbq.offer(i);
+                    try {
+                        sbq.offer(i);
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                 }
             }
         );
@@ -24,7 +28,11 @@ class SimpleBlockingQueueTest {
         Thread consumer = new Thread(
             () -> {
                 for (int i = 0; i < 10; i++) {
-                    expected.add(sbq.poll());
+                    try {
+                        expected.add(sbq.poll());
+                    } catch (InterruptedException e) {
+                        Thread.currentThread().interrupt();
+                    }
                 }
             }
         );
