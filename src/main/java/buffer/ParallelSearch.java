@@ -1,6 +1,6 @@
 package buffer;
 
-import ru.job4j.wait_notify_notifyall.SimpleBlockingQueue;
+import ru.job4j.wait.SimpleBlockingQueue;
 
 public class ParallelSearch {
     public static void main(String[] args) {
