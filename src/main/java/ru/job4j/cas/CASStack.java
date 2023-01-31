@@ -1,4 +1,4 @@
-package cas;
+package ru.job4j.cas;
 
 import java.util.concurrent.atomic.AtomicReference;
 
