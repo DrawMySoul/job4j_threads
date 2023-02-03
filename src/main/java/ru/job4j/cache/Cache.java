@@ -24,7 +24,7 @@ public class Cache {
         memory.remove(model.getId());
     }
 
-    public Base get(int id) {
-        return memory.get(id);
+    public Base get(Base model) {
+        return memory.get(model.getId());
     }
 }
