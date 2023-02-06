@@ -27,10 +27,12 @@ class CacheTest {
     void whenUpdate() {
         Cache cache = new Cache();
         Base model = new Base(1, 1);
+        model.setName("John");
         cache.add(model);
         assertThat(cache.update(new Base(1, 1))).isTrue();
         assertThat(cache.get(model).getId()).isEqualTo(1);
         assertThat(cache.get(model).getVersion()).isEqualTo(2);
+        assertThat(cache.get(model).getName()).isEqualTo("John");
     }
 
     @Test
