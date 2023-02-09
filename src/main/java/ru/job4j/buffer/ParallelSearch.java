@@ -1,4 +1,4 @@
-package buffer;
+package ru.job4j.buffer;
 
 import ru.job4j.wait.SimpleBlockingQueue;
 
