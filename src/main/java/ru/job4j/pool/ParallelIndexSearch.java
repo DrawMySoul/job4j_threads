@@ -33,8 +33,9 @@ public class ParallelIndexSearch<T> extends RecursiveTask<Integer> {
 
     private int linealSearch() {
         return IntStream.range(from, to)
-            .filter(i -> array[i] == element)
-            .findFirst().orElse(-1);
+            .filter(i -> array[i].equals(element))
+            .findFirst()
+            .orElse(-1);
     }
 
     public static <T> int search(T[] array, T element) {
