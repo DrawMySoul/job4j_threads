@@ -13,6 +13,8 @@
 * Non Blocking Algorithm
 * Пулы
 * Экзамен по теме Многопоточность
+* Git
+  * В курсе производилась работа с ветками git.
 
 ## Контакты 
 * Telegram: [@draw_my_soul](https://t.me/draw_my_soul) 
