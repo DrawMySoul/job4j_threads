@@ -18,6 +18,7 @@
     * Создание ветки из IDEA.
     * Использование команды git reset через IDEA
     * Объединение зафиксированных измененей git rebase -i
+    * Использование git stash
 
 ## Контакты 
 * Telegram: [@draw_my_soul](https://t.me/draw_my_soul) 
