@@ -19,6 +19,10 @@
   * Использование команды git reset через IDEA
   * Объединение зафиксированных измененей git rebase -i
   * Использование git stash
+  * Использование git merge 
+  * Решение конфликтов при ислользовнии git merge
+  * Удаление веток в локальном и удалённом репозиториях git branch -d/git push origin -d 
+  * Создание ветки из коммита git checkout revision
 
 ## Контакты 
 * Telegram: [@draw_my_soul](https://t.me/draw_my_soul) 
